@@ -1,0 +1,12 @@
+pipeline {
+    agent any
+    stages {
+        stage('Test Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/rodish007/CICD.git',
+                    credentialsId: 'github-cred'
+            }
+        }
+    }
+}
